@@ -27,20 +27,13 @@
 
   $('#site-name').textContent = D.siteName;
 
-  // ---- 1 Thesis ----
-  (function(){
-    var t = D.thesis, h = '<div class="label">1 · Thesis</div><h1>' + esc(t.headline) + '</h1><div class="grid2">';
-    t.blocks.forEach(function(b){
-      h += '<div class="box"><h3>' + esc(b.title) + '</h3><p>' + b.paragraphs.map(esc).join('</p><p>') + '</p></div>';
-    });
-    wrap('thesis').innerHTML = h + '</div>';
-  })();
+  // (Thesis section removed; its text remains in data.js if wanted back.)
 
   // ---- 2 Direction map ----
   (function(){
     var R = D.roadmap, w = wrap('roadmap'), sel = 0;
     R.stages.forEach(function(s, i){ if (s.current) sel = i; });
-    w.innerHTML = '<div class="label">2 · Direction map</div><h2>Direction map</h2><div class="timeline" role="tablist"></div><div class="box" id="stage-detail" aria-live="polite"></div>';
+    w.innerHTML = '<div class="label">1 · Direction map</div><h2>Direction map</h2><div class="timeline" role="tablist"></div><div class="box" id="stage-detail" aria-live="polite"></div>';
     var tl = $('.timeline', w), det = $('#stage-detail', w);
     function draw(){
       tl.innerHTML = R.stages.map(function(s, i){
@@ -62,7 +55,7 @@
   (function(){
     var C = D.calculator, L = C.limits, w = wrap('calculator');
     w.innerHTML =
-      '<div class="label">3 · City calculator</div><h2>City calculator</h2><div class="calc"><div>' +
+      '<div class="label">2 · City calculator</div><h2>City calculator</h2><div class="calc"><div>' +
       '<div class="ctl"><div class="row"><label for="c-members">Members per city</label><b id="v-members"></b></div><input type="range" id="c-members" min="0" max="' + L.membersMax + '" step="10"></div>' +
       '<div class="ctl"><div class="row"><label for="c-cities">Number of cities</label><b id="v-cities"></b></div><input type="range" id="c-cities" min="' + L.citiesMin + '" max="' + L.citiesMax + '" step="1"></div>' +
       '<div class="ctl"><div class="row"><label for="c-attach">Second-group attach rate</label><b id="v-attach"></b></div><input type="range" id="c-attach" min="0" max="100" step="1"></div>' +
@@ -115,7 +108,7 @@
     var scen = F.scenarioDefault, profits = {}, mult = F.multipleDefault;
     F.scenarios.forEach(function(s){ profits[s.name] = s.profit; });
     w.innerHTML =
-      '<div class="label">4 · Financial model and exit math</div><h2>Financial model and exit math</h2>' +
+      '<div class="label">3 · Financial model and exit math</div><h2>Financial model and exit math</h2>' +
       '<div class="label">Scenario</div><div class="btns" id="f-scen"></div>' +
       '<div class="calc"><div>' +
       '<div class="ctl"><label class="row" for="f-profit">Trailing annual profit (NZ$)</label><input type="number" id="f-profit" min="0" step="10000" inputmode="decimal" placeholder="TBC"></div>' +
@@ -165,7 +158,7 @@
 
   // ---- 5 Product pipeline and decisions ----
   (function(){
-    var h = '<div class="label">5 · Product pipeline and decisions</div><h2>Product pipeline</h2>';
+    var h = '<div class="label">4 · Product pipeline and decisions</div><h2>Product pipeline</h2>';
     D.products.forEach(function(g){
       h += '<div class="wave"><h3>' + esc(g.wave) + '</h3><div class="rows"><div class="prow head"><div>Product</div><div>Gate</div><div>Status</div></div>';
       g.items.forEach(function(it){ h += '<div class="prow"><div>' + esc(it.name) + '</div><div class="muted">' + esc(it.gate) + '</div><div>' + esc(it.status) + '</div></div>'; });
@@ -181,7 +174,7 @@
 
   // ---- 6 Mood board ----
   (function(){
-    var h = '<div class="label">6 · Mood board</div><h2>Mood board</h2><div class="mood">';
+    var h = '<div class="label">5 · Mood board</div><h2>Mood board</h2><div class="mood">';
     D.moodboard.forEach(function(m){
       h += '<div class="tile"><div class="img"><img src="' + esc(m.image) + '" alt="' + esc(m.source) + (m.placeholder ? ' (placeholder)' : '') + '" loading="lazy"></div>' +
         '<div class="src">' + esc(m.source) + (m.placeholder ? ' <span class="muted" style="font-weight:400">· Placeholder</span>' : '') + '</div>' +
