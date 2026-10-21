@@ -172,14 +172,22 @@
     wrap('pipeline').innerHTML = h + '</div>';
   })();
 
-  // ---- 6 Mood board ----
+  // ---- Mood board (masonry, filled left to right) ----
   (function(){
-    var h = '<div class="label">5 · Mood board</div><h2>Mood board</h2><div class="mood">';
-    D.moodboard.forEach(function(m){
-      h += '<div class="tile"><div class="img"><img src="' + esc(m.image) + '" alt="' + esc(m.source) + (m.placeholder ? ' (placeholder)' : '') + '" loading="lazy"></div>' +
-        '<div class="src">' + esc(m.source) + (m.placeholder ? ' <span class="muted" style="font-weight:400">· Placeholder</span>' : '') + '</div>' +
-        '<div class="steal">Steal this: ' + esc(m.steal) + '</div></div>';
-    });
-    wrap('moodboard').innerHTML = h + '</div>';
+    var w = wrap('moodboard'), cols = 0;
+    w.innerHTML = '<div class="label">5 · Mood board</div><h2>Mood board</h2><div class="mood" id="mood"></div>';
+    function draw(){
+      var n = window.innerWidth < 720 ? 2 : 4;
+      if (n === cols) return;
+      cols = n;
+      var c = [], i;
+      for (i = 0; i < n; i++) c.push('');
+      D.moodboard.forEach(function(m, k){
+        c[k % n] += '<figure class="tile"><img src="' + esc(m.image) + '" alt="' + esc(m.caption) + '" loading="lazy"><figcaption>' + esc(m.caption) + '</figcaption></figure>';
+      });
+      $('#mood').innerHTML = c.map(function(x){ return '<div class="mcol">' + x + '</div>'; }).join('');
+    }
+    draw();
+    window.addEventListener('resize', draw);
   })();
 })();

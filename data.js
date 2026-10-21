@@ -108,13 +108,16 @@ window.MARDEN_DATA = {
     ]}
   ],
 
-  // Add an image to assets/moodboard/ and one entry here. placeholder:true shows a "Placeholder" label.
+  // Add an image to assets/moodboard/ and one entry here.
+  // Masonry grid, filled left to right. Each item: image + a short lowercase caption. No brand names in text.
   moodboard: [
-    { image: "assets/moodboard/moon-juice.svg", source: "Moon Juice", steal: "TBC", placeholder: true },
-    { image: "assets/moodboard/ellington-skin.svg", source: "Ellington Skin", steal: "TBC", placeholder: true },
-    { image: "assets/moodboard/naked-tallow.svg", source: "Naked Tallow", steal: "TBC", placeholder: true },
-    { image: "assets/moodboard/unplain-oil.svg", source: "Unplain Oil", steal: "TBC", placeholder: true },
-    { image: "assets/moodboard/activist.svg", source: "Activist", steal: "TBC", placeholder: true },
-    { image: "assets/moodboard/foily-sweet.svg", source: "Foily Sweet", steal: "TBC", placeholder: true }
+    { image: "assets/moodboard/01.png", caption: "manuka honey mask" },
+    { image: "assets/moodboard/02.png", caption: "body oil" },
+    { image: "assets/moodboard/03.png", caption: "tallow balm" },
+    { image: "assets/moodboard/04.png", caption: "tallow balm + milk" },
+    { image: "assets/moodboard/05.png", caption: "body oil" },
+    { image: "assets/moodboard/06.png", caption: "face oil" },
+    { image: "assets/moodboard/07.png", caption: "deodorant" },
+    { image: "assets/moodboard/08.png", caption: "mouth wash" }
   ]
 };

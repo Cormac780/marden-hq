@@ -65,12 +65,11 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;background:var(--text
 .drow:first-child{border-top:1px solid var(--line)}
 .drow .top{display:flex;justify-content:space-between;gap:16px;font-weight:600}
 /* moodboard */
-.mood{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px}
-.tile{display:block}
-.tile .img{aspect-ratio:1/1;border:1px solid var(--line);background:var(--tint);overflow:hidden}
-.tile img{width:100%;height:100%;object-fit:cover;display:block}
-.tile .src{font-weight:600;margin-top:8px;font-size:.9375rem}
-.tile .steal{color:var(--muted);font-size:.875rem}
+.mood{display:flex;gap:32px;align-items:flex-start}
+.mcol{flex:1;min-width:0;display:flex;flex-direction:column;gap:24px}
+.tile{margin:0}
+.tile img{width:100%;height:auto;display:block}
+.tile figcaption{color:var(--muted);font-size:.75rem;margin-top:4px}
 @media(max-width:720px){
   section{padding:40px 0}
   .grid2,.calc{grid-template-columns:1fr;gap:24px}
@@ -80,6 +79,6 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;background:var(--text
   .prow{grid-template-columns:1fr;gap:2px}
   .prow.head{display:none}
   .chain .arr{display:none}
-  .mood{grid-template-columns:repeat(2,1fr);gap:16px}
+  .mood{gap:16px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

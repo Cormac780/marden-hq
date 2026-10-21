@@ -37,7 +37,7 @@ Transparent fill, 1px `--line` border, 0–2px radius, 16px padding. No fill col
 Rectangular, 1px `--line` border, 2px radius, transparent fill, 0.875rem text, min 44px tall. Hover: border `--text`. Active: border and text `--accent`. Sliders: hairline track, small square charcoal thumb (24px for phone use).
 
 ## Mood board
-Uniform Are.na channel grid: equal square tiles, hairline border, image fills the tile, below it source name (weight 600) then the "Steal this:" line (muted). Placeholders are marked "Placeholder".
+Masonry grid of 4 columns (2 on phone), filled left to right. Images keep their natural proportions, no border, no radius. Below each: one short lowercase caption in muted 0.75rem. No brand names in text, no "Steal this:" line.
 
 ## Motion
 None except 100ms border-colour change. Respects reduced-motion.
