@@ -118,6 +118,18 @@ window.MARDEN_DATA = {
     { image: "assets/moodboard/05.png", caption: "body oil" },
     { image: "assets/moodboard/06.png", caption: "face oil" },
     { image: "assets/moodboard/07.png", caption: "deodorant" },
-    { image: "assets/moodboard/08.png", caption: "mouth wash" }
+    { image: "assets/moodboard/08.png", caption: "mouth wash" },
+    { image: "assets/moodboard/09.png", caption: "perfume" },
+    { image: "assets/moodboard/10.png", caption: "perfume" },
+    { image: "assets/moodboard/11.png", caption: "lip balm" },
+    { image: "assets/moodboard/12.png", caption: "eye m" },
+    { image: "assets/moodboard/13.png", caption: "manuka hand cream" },
+    { image: "assets/moodboard/14.png", caption: "shampoo + conditioner" },
+    { image: "assets/moodboard/15.png", caption: "candle" },
+    { image: "assets/moodboard/16.png", caption: "beauty cream" },
+    { image: "assets/moodboard/17.png", caption: "electrolyte concentrate" },
+    { image: "assets/moodboard/18.png", caption: "soap bar" },
+    { image: "assets/moodboard/19.png", caption: "perfume" },
+    { image: "assets/moodboard/20.png", caption: "dental care" }
   ]
 };
